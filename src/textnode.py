@@ -16,8 +16,10 @@ class TextNode:
         self.text_type = TextType(text_type)
         self.url = url
 
-    def __eg__(self,other):
-            return (isinstance(other, TextNode) and self.text, self.text_type, self.url) == (other.text, other.text_type, other.url)
+    def __eq__(self,other):
+        return (self.text == other.text and
+        self.text_type == other.text_type and
+        self.url == other.url)
 
     def __repr__(self):
         return f"TextNode({self.text}, {self.text_type.value}, {self.url})"
