@@ -1,8 +1,9 @@
 from textnode import *
+from htmlnode import *
 
 def main():
-    print("hello world")
-    my_node = TextNode("This is some anchor text", "link", "https://www.boot.dev")
-    print(my_node)
+    node = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
+    print(node)
+
 
 main()
