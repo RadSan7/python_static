@@ -2,7 +2,7 @@ import os
 import shutil
 
 def copy_static():
-    public = "/Users/a12345678/Pliki/Boot.dev/python_static/python_static/public"
+    public = "/Users/a12345678/Pliki/Boot.dev/python_static/python_static/docs"
     static = "/Users/a12345678/Pliki/Boot.dev/python_static/python_static/static"
 
     if os.path.exists(public):
