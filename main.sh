@@ -1,2 +1,6 @@
-cd "$(dirname "$0")"
-python -m src.main
+chmod +x main.sh
+python3 -m src.main
+
+cd public
+
+python3 -m http.server 8888

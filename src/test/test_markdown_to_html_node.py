@@ -7,6 +7,7 @@ from src.markdown_to_html_node import *
 class TestMain(unittest.TestCase):
 
     def test_paragraphs(self):
+            print("test")
             md = """
         This is **bolded** paragraph
         text in a p
@@ -37,8 +38,6 @@ class TestMain(unittest.TestCase):
             "<div><pre><code>This is text that _should_ remain\nthe **same** even with inline stuff\n</code></pre></div>",
         )
 
-    def test_extract_title(self):
-         title = "Hello"
         
         
 if __name__ == "__main__":  

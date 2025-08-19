@@ -16,6 +16,8 @@ def copy_static():
         os.makedirs(public)
 
     for item in os.listdir(static):
+        if item == ".DS_Store":
+            continue 
         src_path = os.path.join(static, item)
         dst_path = os.path.join(public, item)
         if os.path.isdir(src_path):

@@ -7,17 +7,13 @@ def text_to_children(text):
     text_nodes = text_to_textnodes(text)
     html_nodes=[]
     for text_node in text_nodes:
-        html_nodes.append(text_node_to_html_node(text_node))
+        node = text_node_to_html_node(text_node)
+        if node is not None:
+            html_nodes.append(node)
    
     return html_nodes
 
 
-def extract_title(markdown: str) -> str:
-    for line in markdown.splitlines():
-        line = line.strip()
-        if line.startswith("# "):   # tylko H1
-            return line[2:].strip()  # obetnij "# " i białe znaki
-    raise Exception("No H1 header found in markdown")
 
 
 def markdown_to_html_node(markdown):

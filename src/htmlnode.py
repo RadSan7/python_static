@@ -9,7 +9,7 @@ class HTMLnode:
         raise NotImplementedError("Subclasses should implement this method")
 
     def props_to_html(self):
-        if self.props is None:
+        if not isinstance(self.props, dict):
             return ""
         attributes = []
         for attribute in self.props:
@@ -25,7 +25,7 @@ class LeafNode(HTMLnode):
 
     def to_html(self):
         if not self.value:
-            raise ValueError("LeafNode must have a value")
+            return ""
         if not self.tag:
             return self.value
         return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"

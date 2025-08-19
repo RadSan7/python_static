@@ -64,7 +64,8 @@ def split_nodes_image(old_nodes):
             new_text = original_text.split(f"![{alt_text}]({url})")
             if new_text[0]:
                 new_nodes.append(TextNode(new_text[0], TextType.TEXT))
-            new_nodes.append(TextNode(alt_text, TextType.IMAGE, url))
+            if alt_text:
+                new_nodes.append(TextNode(alt_text, TextType.IMAGE, url))
             original_text = new_text[1]
         if original_text:
             new_nodes.append(TextNode(original_text, TextType.TEXT))    
@@ -86,7 +87,8 @@ def split_nodes_link(old_nodes):
             new_text = original_text.split(f"[{alt_text}]({url})")
             if new_text[0]:
                 new_nodes.append(TextNode(new_text[0], TextType.TEXT))
-            new_nodes.append(TextNode(alt_text, TextType.LINK, url))
+            if alt_text:
+                new_nodes.append(TextNode(alt_text, TextType.LINK, url))
             original_text = new_text[1]
         if original_text:
             new_nodes.append(TextNode(original_text, TextType.TEXT))
